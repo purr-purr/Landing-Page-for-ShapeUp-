@@ -459,8 +459,35 @@ h1, h2 {
     margin-top: 80px;
 }
 
+.gallery__inner {
+    position: relative;
+}
+
+.gallery__inner::before, .gallery__inner::after  {
+    content: " ";
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    z-index: 10;
+}
+
+.gallery__inner::before {
+    left: 0;
+    -webkit-box-shadow: inset 108px 0px 67px -23px rgba(0,0,0,1);
+    -moz-box-shadow: inset 108px 0px 67px -23px rgba(0,0,0,1);
+    box-shadow: inset 108px 0px 67px -23px rgba(0,0,0,1);
+}
+
+.gallery__inner::after {
+    right: 0;
+    -webkit-box-shadow: inset -103px 0px 67px -23px rgba(0,0,0,1);
+    -moz-box-shadow: inset -103px 0px 67px -23px rgba(0,0,0,1);
+    box-shadow: inset -103px 0px 67px -23px rgba(0,0,0,1);
+}
+
 .gallery__item {
-    margin-right: 30px;
+    margin: 0 10px;
     width: 370px;
     height: 370px;
     outline: none;
@@ -472,10 +499,11 @@ h1, h2 {
 
 .slick-arrow {
     position: absolute;
-    left: 0;
-    top: 155px;
+    /* 50% это позиция на которой ты хочешь что бы был элемент, по центу - 50%. отнимаешь 32пикс это высота самого элемента,
+    потом делишь на 2, (иногда не нужно делить, по ситуации смотри */
+    top: calc(50% - 32px / 2);
     z-index: 1;
-    background: url(/img/gallery/left_arrow.png);
+    background: url(/img/gallery/left_arrow.png) no-repeat center center;
     background-size: cover;
     outline: none;
     width: 20px;
@@ -483,10 +511,17 @@ h1, h2 {
     color: transparent;
     cursor: pointer;
     border: 0;
+
+    z-index: 99;
+}
+
+.slick-prev {
+    left: 10px;
 }
 
 .slick-next {
-    display: none;
+    right: 10px;
+    transform: rotate(180deg);
 }
 
 /*========================
