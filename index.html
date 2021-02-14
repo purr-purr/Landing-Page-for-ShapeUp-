@@ -10,13 +10,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShapeUp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="icon" href="img/logo-icon.png" type="image/x-icon">
 </head>
-<body>
+<body id="body">
     <!-- Header -->
     <header class="header" id="home">
         <div class="container">
@@ -25,34 +25,41 @@
                     <img src="img/logo-icon.png" alt="logo">
                     <p>Shape<span>Up</span></p>
                 </a>
-                <nav class="nav"> 
+                <nav class="nav" id="nav"> 
                     <ul>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">Home</a>
+                            <a href="#" class="nav__link" data-scroll="#home">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">About</a>
+                            <a href="#" class="nav__link" data-scroll="#about">About</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">Trainers</a>
+                            <a href="#" class="nav__link" data-scroll="#trainers">Trainers</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">Service</a>
+                            <a href="#" class="nav__link" data-scroll="#service">Service</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">Reviews</a>
+                            <a href="#" class="nav__link" data-scroll="#reviews">Reviews</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">Price</a>
+                            <a href="#" class="nav__link" data-scroll="#price">Price</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">Blog</a>
+                            <a href="#" class="nav__link" data-scroll="#blog">Blog</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">Contact</a>
+                            <a href="#" class="nav__link" data-scroll="#contact">Contact</a>
                         </li>
                     </ul>
                 </nav> <!-- /.nav -->
+                <nav class="mobile-nav" id="navToggle">
+                    <button class="nav-toggle">
+                        <span class="bar-top"></span>
+                        <span class="bar-mid"></span>
+                        <span class="bar-bot"></span>
+                    </button>
+                </nav> <!-- /.mobile-nav -->
             </div> <!-- /.header__top -->
             <div class="header__inner">
                 <h1 class="header__title"><span class="header__title-word">BUild</span> Your Body
@@ -60,8 +67,8 @@
                 <p class="header__text">Curabitur ac volutpat odio. Nunc eget eros viverra, laoreet ligula eget, interdum augue. 
                     Pellentesque ornare mauris a hendrerit imperdiet.</p>
                 <div class="header__buttons">
-                    <a href="#" class="button">Get Started</a>
-                    <a href="#" class="button button--white">Learn More</a>
+                    <a href="#" class="button" data-scroll="#price">Get Started</a>
+                    <a href="#" class="button button--white" data-scroll="#about">Learn More</a>
                 </div>
             </div> <!-- /.header__inner -->
         </div> <!-- /.container -->
@@ -85,25 +92,8 @@
                     <a href="#" class="about__link">Learn More</a>
                 </div> <!-- /.about__text -->
                 <div class="about__video">
-                    <iframe width="564" height="400" src="https://www.youtube.com/embed/xeJ70DATyPo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="about__subvideo">
-                        <div class="subvideo">
-                            <a href="#">
-                                <img src="img/about/video1.png" alt="" class="video__img">
-                            </a>
-                        </div>
-                        <div class="subvideo">
-                            <a href="#">
-                                <img src="img/about/video2.png" alt="" class="video__img">
-                            </a>
-                        </div>
-                        <div class="subvideo">
-                            <a href="#">
-                                <img src="img/about/video3.png" alt="" class="video__img">
-                            </a>
-                        </div>
-                    </div> <!-- /.about__subvideo -->
-                </div> <!-- /.about__video -->
+                    <iframe width="564" height="444" src="https://www.youtube.com/embed/-uxtv0ZrwW0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div> 
             </div> <!-- /.about__inner -->
         </div> <!-- /.container -->
     </section>
@@ -151,7 +141,7 @@
     </section>
 
     <!-- Third Section -->
-    <section class="service" id="services">
+    <section class="service" id="service">
         <div class="container">
             <div class="service__inner">
                 <div class="service__header">
@@ -195,53 +185,86 @@
                 <h3 class="pretitle">Reviews</h3>
                 <h2 class="title title--trainers">What our clients say</h2>
             </div> <!-- /.reviews__header -->
-            <div class="reviews__inner">
-                <div class="review__item">
-                    <img src="img/reviews/icon1.png" alt="icon" class="reviews__img">
-                    <div class="review__content">
-                        <h3 class="pretitle pretitle--reviews">Rebecca Morrison</h3>
-                        <p class="review__subtitle">Social Worker</p>
-                        <p class="review__text">
-                            Curabitur interdum nulla ligula, ac iaculis est venon. 
-                            Quisque auctor, ex id posuere aliquam, lorem mauris 
-                            venenatis sem, eu facilisis magna nibh . Praesent 
-                            laoreet leo diam, ut suscipit purus malesuada laoreet. 
-                            Aliquam erat volutpat.
-                        </p>
-                        <div class="review__stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
+            <div class="reviews__slider">
+                <div class="review__item-wrapper">
+                    <div class="review__item">
+                        <div class="review__item-inner">
+                            <div class="review__content">
+                                <h3 class="pretitle pretitle--reviews">Rebecca Morrison</h3>
+                                <p class="review__subtitle">Social Worker</p>
+                                <p class="review__text">
+                                    Curabitur interdum nulla ligula, ac iaculis est venon. 
+                                    Quisque auctor, ex id posuere aliquam, lorem mauris 
+                                    venenatis sem, eu facilisis magna nibh . Praesent 
+                                    laoreet leo diam, ut suscipit purus malesuada laoreet. 
+                                    Aliquam erat volutpat.
+                                </p>
+                                <div class="review__stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div> <!-- /.review__stars -->
+                            </div> <!-- /.review__content -->
+                        </div> <!-- /.review__item-inner -->
+                    </div> <!-- /.review__item -->
+                </div> <!-- /.review__item-wrapper -->
+
+                <div class="review__item-wrapper">
+                    <div class="review__item">
+                        <div class="review__item-inner">
+                            <div class="review__content">
+                                <h3 class="pretitle pretitle--reviews">Daniel Bllomberg</h3>
+                                <p class="review__subtitle">Salesman</p>
+                                <p class="review__text">
+                                    Donec nec interdum turpis. Donec faucibus facilisis 
+                                    enim, ut fringilla urna elementum non. Mauris vel 
+                                    mauris ac tellus feugiat maximus. Sed augue enim, 
+                                    lacinia non dui ut, mollis vulputate felis. Vivamus 
+                                    consequat bibendum ullamcorper.
+                                </p>
+                                <div class="review__stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div> <!-- /.review__stars -->
+                            </div> <!-- /.review__content -->
+                        </div> <!-- /.review__item-inner -->
+                    </div> <!-- /.review__item -->
                 </div> <!-- /.review__item -->
-                <div class="review__item">
-                    <img src="img/reviews/icon2.png" alt="icon" class="reviews__img">
-                    <div class="review__content">
-                        <h3 class="pretitle pretitle--reviews">Daniel Bllomberg</h3>
-                        <p class="review__subtitle">Salesman</p>
-                        <p class="review__text">
-                            Donec nec interdum turpis. Donec faucibus facilisis 
-                            enim, ut fringilla urna elementum non. Mauris vel 
-                            mauris ac tellus feugiat maximus. Sed augue enim, 
-                            lacinia non dui ut, mollis vulputate felis. Vivamus 
-                            consequat bibendum ullamcorper.
-                        </p>
-                        <div class="review__stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div> <!-- /.review__stars -->
-                    </div>
-                </div> <!-- /.review__item -->
-            </div> <!-- /.reviews__inner -->
+
+                <div class="review__item-wrapper">
+                    <div class="review__item">
+                        <div class="review__item-inner">
+                            <div class="review__content">
+                                <h3 class="pretitle pretitle--reviews">Daniel Bllomberg</h3>
+                                <p class="review__subtitle">Salesman</p>
+                                <p class="review__text">
+                                    Donec nec interdum turpis. Donec faucibus facilisis 
+                                    enim, ut fringilla urna elementum non. Mauris vel 
+                                    mauris ac tellus feugiat maximus. Sed augue enim, 
+                                    lacinia non dui ut, mollis vulputate felis. Vivamus 
+                                    consequat bibendum ullamcorper.
+                                </p>
+                                <div class="review__stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div> <!-- /.review__stars -->
+                            </div> <!-- /.review__content -->
+                        </div> <!-- /.review__item-inner -->
+                    </div> <!-- /.review__item -->
+                </div> <!-- /.reviews__slider -->
+            </div> <!-- /.review__item -->
         </div> <!-- /.container -->
     </section>
 
+    <!-- Fifth Section -->
     <section class="gallery">
         <div class="gallery__inner">
             <div class="gallery__slider">
@@ -275,11 +298,11 @@
                 <div class="gallery__item">
                     <img src="img/gallery/2.png" alt="Image" class="gallery__img">
                 </div>
-            </div>
-        </div>
+            </div> <!-- /.gallery__slider -->
+        </div> <!-- /.gallery__inner -->
     </section>
 
-    <!-- Fifth Section -->
+    <!-- Sixth Section -->
     <section class="tariffs" id="price">
         <div class="container">
             <div class="tariffs__header">
@@ -293,12 +316,12 @@
                     </div>
                     <div class="tariff__frame">One Day Training</div>
                     <div class="tariff__wrapper--second">
-                        <p class="tariff__text tariff__text--first">One day access to all clubs</p>
+                        <p class="tariff__text">One day access to all clubs</p>
                         <p class="tariff__text">Training in group</p>
                         <p class="tariff__text">No Dedicated trainer</p>
                         <p class="tariff__text">Access to one 1 hour fitness class</p>
                         <div class="text__frame">
-                            <p class="tariff__text">No access to spa center (Book Separately)</p>
+                            <p>No access to spa center (Book Separately)</p>
                         </div>
                         <a href="#" class="button button--tarrifs">Book Now</a>
                     </div>
@@ -309,12 +332,12 @@
                     </div>
                     <div class="tariff__frame">One Year Subscription</div>
                     <div class="tariff__wrapper--second">
-                        <p class="tariff__text tariff__text--first">Access to all clubs</p>
+                        <p class="tariff__text">Access to all clubs</p>
                         <p class="tariff__text">Training in group or alone</p>
                         <p class="tariff__text">Dedicated trainer available</p>
                         <p class="tariff__text">Access to one 1 hour fitness class</p>
                         <div class="text__frame">
-                            <p class="tariff__text">Access to spa center (Book Separately)</p>
+                            <p>Access to spa center (Book Separately)</p>
                         </div>
                         <a href="#" class="button button--tarrifs">Book Now</a>
                     </div>
@@ -325,12 +348,12 @@
                     </div>
                     <div class="tariff__frame">One Month Sybscription</div>
                     <div class="tariff__wrapper--second">
-                        <p class="tariff__text tariff__text--first">One day access to all clubs</p>
+                        <p class="tariff__text">One day access to all clubs</p>
                         <p class="tariff__text">Training in group</p>
                         <p class="tariff__text">No Dedicated trainer</p>
                         <p class="tariff__text">Access to one all fitness class</p>
                         <div class="text__frame">
-                            <p class="tariff__text">No access to spa center (Book Separately)</p>
+                            <p>No access to spa center (Book Separately)</p>
                         </div>
                         <a href="#" class="button button--tarrifs">Book Now</a>
                     </div>
@@ -339,7 +362,7 @@
         </div> <!-- /.container -->
     </section>
 
-    <!-- Sixth Section -->
+    <!-- Seventh Section -->
     <section class="blog" id="blog">
         <div class="container">
             <div class="blog__header">
@@ -348,7 +371,7 @@
             </div> <!-- /.blog__header -->
             <div class="blog__inner">
                 <div class="blog__item">
-                    <img src="img/blog/icon1.png" alt="icon">
+                    <img src="img/blog/icon1.png" alt="icon" class="blog__img">
                     <div class="blog__content">
                         <h4 class="blog__title">Body Fitness</h4>
                         <h3 class="blog__subtitle">Start your push-ups today and see results</h3>
@@ -362,7 +385,7 @@
                     </div>
                 </div> <!-- /.blog__item -->
                 <div class="blog__item">
-                    <img src="img/blog/icon2.png" alt="icon">
+                    <img src="img/blog/icon2.png" alt="icon" class="blog__img">
                     <div class="blog__content">
                         <h4 class="blog__title">Exersize</h4>
                         <h3 class="blog__subtitle">Are you commited enough for better body ?</h3>
@@ -376,7 +399,7 @@
                    </div>
                 </div> <!-- /.blog__item -->
                 <div class="blog__item">
-                    <img src="img/blog/icon3.png" alt="icon">
+                    <img src="img/blog/icon3.png" alt="icon" class="blog__img">
                     <div class="blog__content">
                         <h4 class="blog__title">Fitness Club</h4>
                         <h3 class="blog__subtitle">Why working out is good for you ?</h3>
@@ -390,9 +413,9 @@
                     </div>
                </div> <!-- /.blog__item -->
                <div class="blog__item">
-                  <img src="img/blog/icon4.png" alt="icon">
-                  <div class="blog__content">
-                    <h4 class="blog__title">Training Equipments</h4>
+                    <img src="img/blog/icon4.png" alt="icon" class="blog__img">
+                    <div class="blog__content">
+                        <h4 class="blog__title">Training Equipments</h4>
                         <h3 class="blog__subtitle">Liftings things do make a difference</h3>
                         <p class="blog__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare ut dui sed facilisis. Aliquam eu nunc orci. Aliquam eleifend in lorem nec mollis.
                         </p>
@@ -401,13 +424,13 @@
                             <p class="blog__data--text">3d | Marry Poppins</p>
                             <p class="blog__data--likes blog__data--text">39<i class="fas fa-heart"></i></p>
                         </div>
-                   </div>
+                    </div>
                 </div><!-- /.blog__item -->
             </div> <!-- /.blog__inner -->
         </div> <!-- /.container -->
     </section>
 
-    <!-- Seventh Section -->
+    <!-- Eighth Section -->
     <section class="call" id="contact">
         <div class="container">
             <div class="call__header">
@@ -421,7 +444,7 @@
                 <a href="#" class="button button--call">Book a Program</a>
             </div> <!-- /.call__header -->
         </div> <!-- /.container -->
-    </section>
+    </section> 
 
     <!-- Footer -->
     <footer class="footer">
@@ -451,7 +474,7 @@
                         <a href="https://vimeo.com/" class="social__icon" target="_blank">
                             <i class="fab fa-vimeo-v"></i>
                         </a>
-                    </div>
+                    </div> <!-- /.footer__icons -->
                 </div> <!-- /.footer__block-first -->
                    <div class="footer__block-second">
                         <h2 class="footer__title">Quick Contacts</h3>
@@ -485,19 +508,19 @@
                     </div> <!-- /.footer__block-second -->
                     <div class="footer__block-third">
                         <h2 class="footer__title">Popular Search Tags</h2>
-                            <div class="footer__buttons">
-                                <a href="#" class="button__item">Workout</a>
-                                <a href="#" class="button__item">Spa</a>
-                                <a href="#" class="button__item">Schedule</a>
-                                <a href="#" class="button__item button__item--long">Weightlifing</a>
-                                <a href="#" class="button__item">Boxing</a>
-                                <a href="#" class="button__item">Yoga</a>
-                                <a href="#" class="button__item">Location</a>
-                                <a href="#" class="button__item">Trainers</a>
-                                <a href="#" class="button__item">Class</a>
-                                <a href="#" class="button__item button__item--long">Equipments</a>
-                                <a href="#" class="button__item">Nutrition</a>
-                            </div>
+                        <div class="footer__buttons">
+                            <a href="#" class="button__item">Workout</a>
+                            <a href="#" class="button__item">Spa</a>
+                            <a href="#" class="button__item">Schedule</a>
+                            <a href="#" class="button__item button__item--long">Weightlifing</a>
+                            <a href="#" class="button__item">Boxing</a>
+                            <a href="#" class="button__item">Yoga</a>
+                            <a href="#" class="button__item">Location</a>
+                            <a href="#" class="button__item">Trainers</a>
+                            <a href="#" class="button__item">Class</a>
+                            <a href="#" class="button__item button__item--long">Equipments</a>
+                            <a href="#" class="button__item">Nutrition</a>
+                        </div>
                     </div> <!-- /.footer__block-third -->
                 </div> <!-- /.footer__inner -->
             </div> <!-- /.container -->
@@ -506,28 +529,28 @@
             <nav class="nav nav--second"> 
                 <ul>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Home</a>
+                        <a href="#" class="nav__link" data-scroll="#home">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">About</a>
+                        <a href="#" class="nav__link" data-scroll="#about">About</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Trainers</a>
+                        <a href="#" class="nav__link" data-scroll="#trainers">Trainers</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Service</a>
+                        <a href="#" class="nav__link" data-scroll="#service">Service</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Reviews</a>
+                        <a href="#" class="nav__link" data-scroll="#reviews">Reviews</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Price</a>
+                        <a href="#" class="nav__link" data-scroll="#price">Price</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Blog</a>
+                        <a href="#" class="nav__link" data-scroll="#blog">Blog</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Contact</a>
+                        <a href="#" class="nav__link" data-scroll="#contact">Contact</a>
                     </li>
                 </ul>
             </nav> <!-- /.nav--second -->
@@ -537,15 +560,17 @@
         </div> <!-- /.footer__bottom -->
     </footer>
 
+    <!-- Scroll-up button -->
+    <a href="#" class="scroll-up" data-scroll="#home">
+        <i class="fas fa-arrow-alt-circle-up"></i>
+    </a>
+
     <!-- Jquery library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
     <!-- Slick Slider -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
     <!-- Main.js file -->
     <script src="js/main.js"></script>
-
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/51bb86e5bf.js" crossorigin="anonymous"></script>
 </body>
